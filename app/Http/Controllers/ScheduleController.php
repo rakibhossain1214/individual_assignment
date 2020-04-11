@@ -37,6 +37,15 @@ class ScheduleController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'route'=>"required",
+            'fare'=>"required",
+            'departure'=>"required",
+            'arrival'=>"required"
+        ]);
+
+        print_r($request->input());
+
         $user = Auth::user();
         if($user != null){
             $schedule = new Schedule();
@@ -87,6 +96,15 @@ class ScheduleController extends Controller
     
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'route'=>"required",
+            'fare'=>"required",
+            'departure'=>"required",
+            'arrival'=>"required"
+        ]);
+
+        print_r($request->input());
+
         $user = Auth::user();
         if($user != null){
             $schedule = Schedule::find($id);
@@ -120,6 +138,12 @@ class ScheduleController extends Controller
 
     public function search(Request $request)
     {
+        $request->validate([
+            'search'=>"required"
+        ]);
+
+        print_r($request->input());
+
         $user = Auth::user();
         if($user != null){
             if($request->search){

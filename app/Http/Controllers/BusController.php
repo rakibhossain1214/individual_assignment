@@ -43,6 +43,17 @@ class BusController extends Controller
     
     public function store(Request $request)
     {
+        $request->validate([
+            'bname'=>"required",
+            'location'=>"required",
+            'company'=>"required",
+            'operator'=>"required",
+            'seat_row'=>"required",
+            'seat_column'=>"required"
+        ]);
+
+        print_r($request->input());
+
         $user = Auth::user();
         if($user != null){
             $bus = new Bus();
@@ -95,6 +106,17 @@ class BusController extends Controller
     
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'bname'=>"required",
+            'location'=>"required",
+            'company'=>"required",
+            'operator'=>"required",
+            'seat_row'=>"required",
+            'seat_column'=>"required"
+        ]);
+
+        print_r($request->input());
+        
         $user = Auth::user();
         if($user != null){
             $bus = Bus::find($id);
@@ -130,6 +152,12 @@ class BusController extends Controller
 
     public function search(Request $request)
     {
+        $request->validate([
+            'search'=>"required"
+        ]);
+
+        print_r($request->input());
+
         $user = Auth::user();
         if($user != null){
             if($request->search){

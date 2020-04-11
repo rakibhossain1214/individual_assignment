@@ -18,12 +18,21 @@
 
   @if($layout == 'index')
   
-  <div class="form-group">
-    <label for="search">Ajax Search location</label>
-    <input type="search" id="search" class="form-control" >
-    <button onClick="search()" class="btn btn-primary">Search</button>
-  </div>
-    
+  <div class="container box">
+   
+    <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="search">Ajax Search Buses</label>
+                    <input type="search" name="search" id="search" class="form-control" >
+                    @error('search')
+                        <div>{{$message}}</div>
+                    @enderror
+                    <button onClick="search()" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
    
         <div class="container-fluid">
             <div class="row">
@@ -37,7 +46,7 @@
         <div class="container-fluid">
             <div class="row">
                 <section class="col">
-                    @include("scheduleslist")
+                    
                 </section>
                 <section class="col">
                     @include("schedulesadd")
