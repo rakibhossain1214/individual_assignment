@@ -1,5 +1,3 @@
-
-
 <form  method="patch" action="{{url('/buses/update', [$bus->id])}}">
     @csrf
     @method('patch')
@@ -34,6 +32,5 @@
     </div>
 
     <input type="submit" class="btn btn-info" value="Update" />
-    <input type="reset" class="btn btn-info" value="Reset" />
-
+    <a href="{{ url('/buses') }}" class="btn btn-sm btn-info">Back</a>
 </form>

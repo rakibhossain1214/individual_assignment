@@ -31,6 +31,6 @@
     </div>
 
     <input type="submit" class="btn btn-info" value="Save" />
-    <input type="reset" class="btn btn-info" value="Reset" />
+    <a href="{{ url('/buses') }}" class="btn btn-sm btn-info">Back</a>
 
 </form>

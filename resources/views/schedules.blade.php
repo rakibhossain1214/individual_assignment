@@ -26,32 +26,35 @@
         <div class="container-fluid">
             <div class="row">
                 <section class="col">
-                    @include("buseslist")
+                    @include("scheduleslist")
                 </section>
             </div>
         </div>
-    @elseif($layout == 'create')
+
+        @elseif($layout == 'create')
         <div class="container-fluid">
             <div class="row">
                 <section class="col">
-                    @include("buseslist")
+                    @include("scheduleslist")
                 </section>
                 <section class="col">
-                    @include("busesadd")
+                    @include("schedulesadd")
                 </section>
             </div>
         </div>
-    @elseif($layout == 'edit')
+
+        @elseif($layout == 'edit')
         <div class="container-fluid">
             <div class="row">
                 <section class="col">
-                @include("buseslist")
+                 
                 </section>
                 <section class="col">
-                    @include("busesedit")
+                    @include("schedulesedit")
                 </section>
             </div>
         </div>
+
     @endif
 
 

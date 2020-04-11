@@ -83,4 +83,21 @@ class BusController extends Controller
         $bus->delete();
         return redirect('/buses');
     }
+
+    public function search(Request $request)
+    {
+        if($request->search){
+            $searchs = DB::table('buses')
+            ->where('name','like','%'.$request->search.'%')
+            ->orWhere('location','like','%'.$request->search.'%')
+            ->get();
+
+            if($searchs){
+                foreach($searches as $key => $search){
+                    echo '<tr><td>'.$search->name.'</td><tr>'.'<td>'.$search->location.'</td></tr>';
+                }
+            }
+        }
+    }
+
 }
