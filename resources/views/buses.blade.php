@@ -19,18 +19,29 @@
                     @include("buseslist")
                 </section>
                 <section class="col">
-                    @include("buseslist")
+                    @include("busesadd")
                 </section>
             </div>
         </div>
     @elseif($layout == 'create')
-    <div class="container-fluid">
+        <div class="container-fluid">
+            <div class="row">
+                <section class="col">
+                    @include("buseslist")
+                </section>
+                <section class="col">
+                    @include("busesadd")
+                </section>
+            </div>
+        </div>
+    @elseif($layout == 'edit')
+        <div class="container-fluid">
             <div class="row">
                 <section class="col">
                     
                 </section>
                 <section class="col">
-                    @include("busesadd")
+                    @include("busesedit")
                 </section>
             </div>
         </div>

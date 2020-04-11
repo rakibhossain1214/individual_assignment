@@ -13,11 +13,6 @@ class BusController extends Controller
     {
         // $buses = Bus::all();
 
-        // \App\Student::with('payment')->with('discontinuities')
-        // ->leftJoin('managers','students.added_by','=','managers.id')
-        // ->select('students.*','managers.name as m_name','managers.surname as m_s_name','managers.other_column_if_needed','managers.another_column_if_needed')
-        // ->get();
-
         $buses = DB::table('buses')->join('users','users.id','buses.m_id')
         ->select('users.id as uid', 'users.name as manager','buses.*')
         ->get();

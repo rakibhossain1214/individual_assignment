@@ -15,5 +15,5 @@ Route::get('/buses/edit/{id}', 'BusController@edit');
 Route::get('/buses/show/{id}', 'BusController@show');
 Route::get('/buses/add', 'BusController@create');
 Route::post('/buses/store', 'BusController@store');
-Route::post('/buses/update/{id}', 'BusController@update');
+Route::get('/buses/update/{id}', 'BusController@update');
 Route::post('/buses/delete/{id}', 'BusController@destroy');
