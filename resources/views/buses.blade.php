@@ -12,6 +12,7 @@
     <title>Bus Ticket Reservation System</title>
   </head>
   <body>
+  @include("navbar")
   <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 
   @if($layout == 'index')
